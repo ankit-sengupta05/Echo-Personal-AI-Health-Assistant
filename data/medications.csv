@@ -1,0 +1,21 @@
+disease,medication1,dosage1,medication2,dosage2,medication3,dosage3,precautions,otc
+Common Cold,Paracetamol,500mg every 6hrs,Loratadine,10mg once daily,Pseudoephedrine,60mg every 4-6hrs,Rest and stay hydrated. Avoid cold environments.,Yes
+Influenza,Oseltamivir (Tamiflu),75mg twice daily for 5 days,Paracetamol,500-1000mg every 6hrs,Ibuprofen,400mg every 8hrs,Start antiviral within 48hrs of symptoms. Consult doctor.,No
+COVID-19,Paracetamol,500-1000mg every 6hrs,Vitamin D,2000 IU daily,Zinc,50mg daily,Isolate immediately. Seek medical care if breathing worsens.,Partial
+Migraine,Sumatriptan,50-100mg at onset,Ibuprofen,400-800mg,Metoclopramide,10mg for nausea,Avoid bright lights. Rest in quiet dark room.,Partial
+Hypertension,Amlodipine,5-10mg once daily,Lisinopril,10-40mg once daily,Hydrochlorothiazide,12.5-25mg once daily,Monitor BP daily. Low sodium diet. Avoid stress.,No
+Diabetes Type 2,Metformin,500-1000mg twice daily,Glipizide,5-10mg before meals,Sitagliptin,100mg once daily,Monitor blood sugar regularly. Follow diet plan.,No
+Asthma,Salbutamol Inhaler,2 puffs as needed,Beclomethasone,100-200mcg twice daily,Montelukast,10mg once daily at night,Avoid triggers. Carry rescue inhaler always.,Partial
+Anemia,Ferrous Sulfate,325mg 1-3 times daily,Vitamin C,500mg with iron,Folic Acid,400-1000mcg daily,Take iron on empty stomach if tolerated. Avoid tea with iron.,Partial
+Gastritis,Omeprazole,20mg before breakfast,Antacid (Magnesium Hydroxide),1-2 tablets after meals,Domperidone,10mg before meals,Avoid spicy and acidic foods. Eat smaller meals.,Partial
+Anxiety Disorder,Sertraline,50-200mg once daily,Buspirone,10-30mg twice daily,Lorazepam,0.5-1mg as needed,Do not stop abruptly. Therapy is essential alongside medication.,No
+Depression,Fluoxetine,20-40mg once daily,Sertraline,50-200mg once daily,Mirtazapine,15-45mg at bedtime,Takes 2-4 weeks for effect. Do not self-discontinue.,No
+Urinary Tract Infection,Nitrofurantoin,100mg twice daily for 5-7 days,Trimethoprim,200mg twice daily for 7 days,Phenazopyridine,200mg 3 times daily,Drink plenty of water. Complete full antibiotic course.,Partial
+Arthritis,Ibuprofen,400-600mg 3 times daily,Naproxen,250-500mg twice daily,Hydroxychloroquine,200-400mg once daily,Apply heat or cold packs. Low-impact exercise helps.,Partial
+Thyroid Disorder,Levothyroxine,25-200mcg once daily fasting,Methimazole,5-30mg daily (hyperthyroid),Propranolol,20-40mg twice daily (for symptoms),Take thyroid meds same time daily. Regular blood tests needed.,No
+Dengue Fever,Paracetamol,500-1000mg every 6hrs,Oral Rehydration Salts,As needed,Vitamin C,500mg twice daily,Avoid NSAIDs like aspirin. Monitor platelet count. Rest.,Partial
+Pneumonia,Amoxicillin,500mg 3 times daily for 7 days,Azithromycin,500mg once daily for 3-5 days,Paracetamol,500mg every 6hrs for fever,Hospitalization may be needed for severe cases. Stay warm.,No
+Irritable Bowel Syndrome,Mebeverine,135mg 3 times daily,Loperamide,2mg after loose stool,Psyllium Husk,3.5g twice daily with water,Identify food triggers. Stress management crucial.,Partial
+Eczema,Hydrocortisone Cream 1%,Apply thin layer twice daily,Cetirizine,10mg once daily,Emollient Cream,Apply generously multiple times daily,Avoid triggers. Moisturize frequently. Lukewarm baths.,Partial
+Sinusitis,Amoxicillin-Clavulanate,875mg twice daily for 10 days,Fluticasone Nasal Spray,2 sprays each nostril daily,Pseudoephedrine,60mg every 4-6hrs,Steam inhalation helps. Saline nasal rinse.,Partial
+Kidney Stones,Tamsulosin,0.4mg once daily (helps pass stone),Ibuprofen,400-600mg every 8hrs for pain,Potassium Citrate,10-20mEq twice daily,Drink 2-3L water daily. Restrict salt and oxalate foods.,Partial

@@ -1,0 +1,21 @@
+disease,symptom1,symptom2,symptom3,symptom4,symptom5,symptom6,description
+Common Cold,runny nose,sneezing,sore throat,cough,mild fever,congestion,A viral infection of the upper respiratory tract causing mild symptoms.
+Influenza,high fever,body aches,fatigue,headache,chills,dry cough,A contagious respiratory illness caused by influenza viruses.
+COVID-19,fever,dry cough,fatigue,loss of smell,loss of taste,shortness of breath,An infectious disease caused by the SARS-CoV-2 virus.
+Migraine,severe headache,nausea,vomiting,light sensitivity,sound sensitivity,visual aura,A neurological condition causing intense recurring headaches.
+Hypertension,headache,dizziness,blurred vision,chest pain,nosebleed,fatigue,High blood pressure that can lead to serious health complications.
+Diabetes Type 2,frequent urination,excessive thirst,weight loss,fatigue,blurred vision,slow healing,A chronic condition affecting blood sugar regulation.
+Asthma,wheezing,shortness of breath,chest tightness,coughing,difficulty breathing,breathlessness,A condition causing airways to narrow and swell.
+Anemia,fatigue,weakness,pale skin,dizziness,cold hands,irregular heartbeat,A condition where blood lacks enough healthy red blood cells.
+Gastritis,stomach pain,nausea,vomiting,bloating,indigestion,loss of appetite,Inflammation of the stomach lining causing digestive discomfort.
+Anxiety Disorder,excessive worry,restlessness,muscle tension,insomnia,rapid heartbeat,sweating,A mental health condition causing persistent feelings of worry.
+Depression,persistent sadness,fatigue,loss of interest,sleep problems,appetite changes,difficulty concentrating,A mental health disorder affecting mood and daily functioning.
+Urinary Tract Infection,burning urination,frequent urination,cloudy urine,pelvic pain,strong odor,blood in urine,A bacterial infection in any part of the urinary system.
+Arthritis,joint pain,stiffness,swelling,reduced range of motion,warmth,redness,Inflammation of one or more joints causing pain and stiffness.
+Thyroid Disorder,fatigue,weight changes,hair loss,cold intolerance,dry skin,depression,A condition affecting the thyroid gland's hormone production.
+Dengue Fever,high fever,severe headache,muscle pain,joint pain,rash,bleeding,A mosquito-borne viral infection causing severe flu-like illness.
+Pneumonia,chest pain,cough,fever,difficulty breathing,fatigue,chills,Infection that inflames air sacs in one or both lungs.
+Irritable Bowel Syndrome,abdominal pain,bloating,diarrhea,constipation,gas,cramping,A common disorder affecting the large intestine with digestive symptoms.
+Eczema,itchy skin,dry skin,rash,redness,swelling,blisters,A condition causing inflamed and itchy patches of skin.
+Sinusitis,facial pain,nasal congestion,headache,runny nose,postnasal drip,fever,Inflammation of the sinuses causing pain and pressure.
+Kidney Stones,severe back pain,side pain,painful urination,nausea,vomiting,blood in urine,Hard deposits of minerals and salts that form inside kidneys.
