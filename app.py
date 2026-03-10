@@ -37,6 +37,47 @@ class EchoApp(tk.Tk):
         self._setup_styles()
         self._build_ui()
 
+    # ── Symptom Analysis Methods ──────────────────────────────────────────────
+    def _clear_symptom_tab(self):
+        """Clear all entries and results in the symptom tab."""
+        self.symptom_entry.clear()
+        self.results_text.clear()
+        self.results_bars_frame.destroy()
+        self.results_bars_frame = tk.Frame(
+            self.tab_symptoms, bg=COLORS["bg_card"]
+        )
+        self.results_bars_frame.pack(fill="x", pady=(0, 8))
+        self.status_var.set("Ready — Enter your symptoms to begin analysis")
+
+    def _run_analysis(self):
+        """Perform symptom analysis and update the results display."""
+        symptoms = self.symptom_entry.get_tags()  # assuming TagEntry has get_tags()
+        threshold = self.threshold_var.get()
+
+        if not symptoms:
+            self.status_var.set("⚠️ Please enter at least one symptom.")
+            return
+
+        self.status_var.set("Analyzing symptoms...")
+        self.results_text.clear()
+        self.loading_label.config(text="Running analysis...")
+
+        # Run symptom engine
+        results = self.engine.analyze(symptoms, threshold=threshold)
+        self.current_results = results
+
+        # Display results
+        self.results_text.set(f"Found {len(results)} possible matches:\n\n", "heading")
+        for disease, score in results:
+            self.results_text.append(f"{disease}: {score}%\n", "body")
+
+        self.loading_label.config(text="")
+        self.status_var.set("✅ Analysis complete.")
+
+    def _update_threshold_label(self, value):
+        """Update the label that shows the match sensitivity percentage."""
+        self.threshold_label.config(text=f"{int(float(value))}%")
+
     # ── Styles ───────────────────────────────────────────────────────────────
     def _setup_styles(self):
         style = ttk.Style(self)
@@ -304,5 +345,38 @@ class EchoApp(tk.Tk):
         self.results_text = ScrollText(results_card.content, height=14)
         self.results_text.pack(fill="both", expand=True)
 
-    # Remaining logic methods stay unchanged (analysis, medications,
-    # diet, history, navigation). Only formatting fixes were applied.
+    # ── Medication Tab ─────────────────────────────────────────────────────────
+    def _build_medication_tab(self):
+        tab = self.tab_medications
+        tab.columnconfigure(0, weight=1)
+        tk.Label(
+            tab,
+            text="💊 Medications tab coming soon...",
+            font=FONTS["body"],
+            fg=COLORS["text_secondary"],
+            bg=COLORS["bg_dark"],
+        ).pack(padx=20, pady=20, anchor="nw")
+
+    # ── Diet Tab ───────────────────────────────────────────────────────────────
+    def _build_diet_tab(self):
+        tab = self.tab_diet
+        tab.columnconfigure(0, weight=1)
+        tk.Label(
+            tab,
+            text="🥗 Diet Plans tab coming soon...",
+            font=FONTS["body"],
+            fg=COLORS["text_secondary"],
+            bg=COLORS["bg_dark"],
+        ).pack(padx=20, pady=20, anchor="nw")
+
+    # ── History Tab ───────────────────────────────────────────────────────────
+    def _build_history_tab(self):
+        tab = self.tab_history
+        tab.columnconfigure(0, weight=1)
+        tk.Label(
+            tab,
+            text="📋 History tab coming soon...",
+            font=FONTS["body"],
+            fg=COLORS["text_secondary"],
+            bg=COLORS["bg_dark"],
+        ).pack(padx=20, pady=20, anchor="nw")

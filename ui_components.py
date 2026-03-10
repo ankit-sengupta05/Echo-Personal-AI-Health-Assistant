@@ -118,17 +118,12 @@ class ScrollText(tk.Frame):
             self, command=self.text.yview, style="Echo.Vertical.TScrollbar"
         )
         self.text.configure(yscrollcommand=scrollbar.set)
-
         self.text.pack(side="left", fill="both", expand=True)
         scrollbar.pack(side="right", fill="y")
 
         # Text tags
         self.text.tag_configure("heading", foreground=COLORS["accent_teal"], font=FONTS["heading"])
-        self.text.tag_configure(
-            "body",
-            foreground=COLORS["text_primary"],
-            font=FONTS["body"]
-        )
+        self.text.tag_configure("body", foreground=COLORS["text_primary"], font=FONTS["body"])
         self.text.tag_configure("success", foreground=COLORS["accent_green"], font=FONTS["body"])
         self.text.tag_configure("warning", foreground=COLORS["accent_yellow"], font=FONTS["body"])
         self.text.tag_configure("danger", foreground=COLORS["accent_red"], font=FONTS["body"])
@@ -136,7 +131,6 @@ class ScrollText(tk.Frame):
         self.text.tag_configure("purple", foreground=COLORS["accent_purple"], font=FONTS["body"])
         self.text.tag_configure("bold", foreground=COLORS["text_primary"], font=FONTS["heading"])
         self.text.tag_configure("mono", foreground=COLORS["text_primary"], font=FONTS["mono"])
-        self.text.tag_configure("body", foreground=COLORS["text_primary"], font=FONTS["body"])
 
     def clear(self):
         self.text.config(state="normal")
@@ -152,3 +146,91 @@ class ScrollText(tk.Frame):
     def set(self, text, tag=None):
         self.clear()
         self.append(text, tag)
+
+
+# ── Symptom Tag Entry ────────────────────────────────────────────────────────
+class TagEntry(tk.Frame):
+    """Multi-line entry styled for symptom input."""
+
+    def __init__(self, parent, placeholder="", height=4, **kwargs):
+        super().__init__(parent, bg=COLORS["bg_input"], **kwargs)
+        self.placeholder = placeholder
+        self._has_focus = False
+
+        self.text = tk.Text(
+            self,
+            height=height,
+            bg=COLORS["bg_input"],
+            fg=COLORS["text_secondary"],
+            font=FONTS["body"],
+            relief="flat",
+            bd=0,
+            wrap="word",
+            padx=10,
+            pady=8,
+            insertbackground=COLORS["accent_teal"],
+            selectbackground=COLORS["accent_blue"],
+        )
+        self.text.pack(fill="both", expand=True, padx=2, pady=2)
+        self._show_placeholder()
+
+        self.text.bind("<FocusIn>", self._on_focus_in)
+        self.text.bind("<FocusOut>", self._on_focus_out)
+
+    def _show_placeholder(self):
+        self.text.delete("1.0", "end")
+        self.text.insert("1.0", self.placeholder)
+        self.text.config(fg=COLORS["text_muted"])
+
+    def _on_focus_in(self, event):
+        if not self._has_focus:
+            current = self.text.get("1.0", "end").strip()
+            if current == self.placeholder:
+                self.text.delete("1.0", "end")
+                self.text.config(fg=COLORS["text_primary"])
+            self._has_focus = True
+
+    def _on_focus_out(self, event):
+        current = self.text.get("1.0", "end").strip()
+        if not current:
+            self._show_placeholder()
+            self._has_focus = False
+
+    def get(self):
+        val = self.text.get("1.0", "end").strip()
+        return "" if val == self.placeholder else val
+
+    def clear(self):
+        self.text.delete("1.0", "end")
+        self._has_focus = False
+        self._show_placeholder()
+
+
+# ── Separator ────────────────────────────────────────────────────────────────
+def hsep(parent, color=None):
+    tk.Frame(parent, bg=color or COLORS["border"], height=1).pack(fill="x", pady=6)
+
+
+# ── Status Badge ─────────────────────────────────────────────────────────────
+class Badge(tk.Label):
+    def __init__(self, parent, text, style="info", **kwargs):
+        styles = {
+            "info": (COLORS["accent_blue"], "#0C1A2E"),
+            "success": (COLORS["accent_green"], "#0C1E10"),
+            "warning": (COLORS["accent_yellow"], "#1F1700"),
+            "danger": (COLORS["accent_red"], "#1E0000"),
+            "purple": (COLORS["accent_purple"], "#1A0E2E"),
+        }
+        fg, bg = styles.get(style, styles["info"])
+        super().__init__(
+            parent,
+            text=f"  {text}  ",
+            fg=fg,
+            bg=bg,
+            font=FONTS["tag"],
+            relief="flat",
+            bd=0,
+            padx=4,
+            pady=2,
+            **kwargs,
+        )
